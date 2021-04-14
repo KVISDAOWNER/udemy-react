@@ -9,15 +9,15 @@ function App() {
       date: new Date(2021, 4, 14),
     },
     {
-      id: "e1",
-      title: "Car Insurance",
-      amount: 293,
+      id: "e2",
+      title: "Dishwasher",
+      amount: 1000,
       date: new Date(2021, 4, 14),
     },
     {
-      id: "e1",
+      id: "Netflix",
       title: "Car Insurance",
-      amount: 293,
+      amount: 10,
       date: new Date(2021, 4, 14),
     },
   ];
