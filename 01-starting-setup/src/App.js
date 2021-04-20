@@ -22,11 +22,15 @@ function App() {
 		},
 	];
 
+	function addExpenseHandler(expense){
+		console.log(expense);
+	}
+
 	return (
 		//jsx code "html inside js"
 		<div>
-			<NewExpense/>
-			<Expenses expenses={expenses}></Expenses>
+			<NewExpense onAddExpense={addExpenseHandler}/>
+			<Expenses expenses={expenses} ></Expenses>
 		</div>
 	);
 }

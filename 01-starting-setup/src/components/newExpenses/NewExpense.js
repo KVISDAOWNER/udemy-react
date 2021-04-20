@@ -1,14 +1,14 @@
 import './NewExpense.css'
 import ExpenseForm from './ExpenseForm'
 
-function NewExpense(){
+function NewExpense(props){
 
 	function saveExpenseDataHandler(enteredExpenseData){
 		const expensedata = {
 			...enteredExpenseData, //put out all key value pairs
 			id: Math.random().toString() //just a wack id generation
 		}
-		console.log(expensedata);
+		props.onAddExpense(expensedata);
 	}
 
 	return (
