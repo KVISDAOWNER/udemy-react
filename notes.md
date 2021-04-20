@@ -1,9 +1,9 @@
-#State Updates
+# State Updates
 If the new state update depends of some of the previous state values then do this:
 
-import {useState} from 'react';
+	import {useState} from 'react';
 
-...
+	...
 
 	const [userinput, setInput] = useState(title: '', amount: '', date: '');
 
@@ -15,7 +15,7 @@ import {useState} from 'react';
 
 and not this:
 
-...
+	...
 
 	const [userinput, setInput] = useState(title: '', amount: '', date: '');
 
@@ -26,5 +26,5 @@ and not this:
 		});
 	}
 
-	
+
 Because you may risk if you spam input that it a delete or outdated "userinput"
