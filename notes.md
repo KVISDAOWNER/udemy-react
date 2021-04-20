@@ -3,8 +3,19 @@ props
 
 
 # Pass data from child -> parent
+## Inside Parent
+	function executeThisFunction(enteredData){
+		do stuff with enteredData;
+	}
+give
+ onSomethingChangedBlaBla = {executeThisFunction} 
+through component probs from parent to child
 
+## Inside Child
+in child access it like this
+	probs.onSomethingChangedBlaBla(dat)
 
+this executes executeThisFunction
 
 # State Updates but with some of Last State's Values
 If the new state update depends of some of the previous state values then do this:
