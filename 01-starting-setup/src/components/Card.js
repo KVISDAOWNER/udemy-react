@@ -1,4 +1,4 @@
-import "./Card.css"
+import './Card.css'
 function Card(props){
 	const classes = 'card ' + props.className; //othwerwise we lose the classnames given to it outside of this file
 	return(
