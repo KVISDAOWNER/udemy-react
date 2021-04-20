@@ -33,7 +33,7 @@ function ExpenseForm(){
 		setTitle('');
 		setAmount('');
 		setDate('');
-		
+
 		console.log(expenseData);
 	}
 
@@ -57,7 +57,7 @@ function ExpenseForm(){
 				<button type='submit'>Add Expense</button>
 			</div>
 		</form>
-	)
+	)//this uses two way binding because the <input> displays a 'default' value which is the most recent one submitted to useState. 
 }
 
 export default ExpenseForm;
