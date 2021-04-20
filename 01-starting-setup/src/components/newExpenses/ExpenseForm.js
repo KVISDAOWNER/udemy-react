@@ -21,8 +21,20 @@ function ExpenseForm(){
 		setDate(event.target.value);
 	}
 
+	function submitHandler(event){
+		event.preventDefault(); //dont reload page on form submit - this is otherwise default html behavior
+
+		const expenseData = {	//IMPORTANT: we use the title, amount, and date returned from useState!!!!
+			title: title,
+			amount: amount,
+			date: new Date(date)
+		}
+
+		console.log(expenseData);
+	}
+
 	return (
-		<form>
+		<form onSubmit={submitHandler}> 
 			<div className="new-expense__controls">
 				<div className='new-expense__control'>
 					<label>Title</label>
