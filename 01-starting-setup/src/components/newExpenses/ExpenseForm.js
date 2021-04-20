@@ -1,22 +1,20 @@
 import {useState} from 'react';
 import './ExpenseForm.css'
 
-function ExpenseForm(){
+function ExpenseForm(props){
 	
 	const [title, setTitle] = useState(''); //initially title is empty aka. ''
+	const [amount, setAmount] = useState(''); //initially amount is '' not a number because it always returns a string anyway
+	const [date, setDate] = useState(''); //initially date is empty aka. ''
 	
 	function titleChangedHandler(event){
 		setTitle(event.target.value);
 	}
-
-	const [amount, setAmount] = useState(''); //initially amount is '' not a number because it always returns a string anyway
 	
 	function amountChangedHandler(event){
 		setAmount(event.target.value);
 	}
 
-	const [date, setDate] = useState(''); //initially date is empty aka. ''
-	
 	function dateChangedHandler(event){
 		setDate(event.target.value);
 	}
@@ -30,11 +28,13 @@ function ExpenseForm(){
 			date: new Date(date)
 		}
 
+		//pass data to parent component
+		props.onSaveExpenseData(expenseData); //onSaveExpenseData is basicly a pointer to the function supplied by NewExpense
+
+		//reset inputs
 		setTitle('');
 		setAmount('');
 		setDate('');
-
-		console.log(expenseData);
 	}
 
 	return (
