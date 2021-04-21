@@ -8,9 +8,9 @@ function Expenses(props){
 	const [filterDate, setFilterDate] = useState('');
 
 
-	function filterChangedHandler(filterDate){
-		setFilterDate(filterDate);
-		console.log(filterDate);
+	function filterChangedHandler(selectedYear){
+		setFilterDate(selectedYear);
+		console.log(selectedYear);
 	}
 
 	return (
