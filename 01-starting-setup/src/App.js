@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Expenses from "./components/expenses/Expenses";
 import NewExpense from "./components/newExpenses/NewExpense"
 function App() {
-	const expenses = [
+
+	const defaultExpenses = [
 		{
 			id: "e1",
 			title: "Car Insurance",
@@ -22,8 +24,15 @@ function App() {
 		},
 	];
 
+	const [expenses, setExpenses] = useState(defaultExpenses);
+
 	function addExpenseHandler(expense){
-		console.log(expense);
+		setExpenses((prevExpenses) => (
+			[
+				...prevExpenses,
+				expense
+			]
+		));
 	}
 
 	return (
