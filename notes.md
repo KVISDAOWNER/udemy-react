@@ -8,11 +8,14 @@ props
 		do stuff with enteredData;
 	}
 give
- onSomethingChangedBlaBla = {executeThisFunction} 
+
+	onSomethingChangedBlaBla = {executeThisFunction} 
+
 through component probs from parent to child
 
 ## Inside Child
 in child access it like this
+
 	probs.onSomethingChangedBlaBla(dat)
 
 this executes executeThisFunction
