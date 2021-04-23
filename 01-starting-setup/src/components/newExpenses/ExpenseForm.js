@@ -24,7 +24,7 @@ function ExpenseForm(props){
 
 		const expenseData = {	//IMPORTANT: we use the title, amount, and date returned from useState!!!!
 			title: title,
-			amount: amount,
+			amount: +amount, //enforce a number conversion
 			date: new Date(date)
 		}
 
