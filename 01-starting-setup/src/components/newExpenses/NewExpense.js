@@ -1,6 +1,5 @@
 import './NewExpense.css'
 import ExpenseForm from './ExpenseForm'
-import AddNexExpenseBtn from './AddNexExpenseBtn'
 
 import { useState } from 'react';
 
@@ -13,27 +12,21 @@ function NewExpense(props){
 			id: Math.random().toString() //just a wack id generation
 		}
 		props.onAddExpense(expensedata);
-	}
-
-	function addNexExpenseHandler(event){
-		setShowExpenseForm(true);
-	}
-
-	function cancelExpenseHandler(event){
 		setShowExpenseForm(false);
 	}
 
-	if(!showExpenseForm){
-		return (
-		<div className='new-expense'>
-			<AddNexExpenseBtn onAddExpense={addNexExpenseHandler}></AddNexExpenseBtn>
-		</div>
-		);
+	function startNewExpenseHandler(){
+		setShowExpenseForm(true);
+	}
+
+	function cancelHandler(){
+		setShowExpenseForm(false);
 	}
 
 	return (
 		<div className='new-expense'>
-			<ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCancelExpense={cancelExpenseHandler}/>
+			{!showExpenseForm && <button onClick={startNewExpenseHandler}>Add Nex Expense</button>}
+			{showExpenseForm && <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCancel={cancelHandler}/>}
 		</div>
 	);
 }
