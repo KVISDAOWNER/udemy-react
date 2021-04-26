@@ -13,12 +13,21 @@
 	text-align: left;
 }
 
+.new-user__control.invalid label {
+	color: red;
+}
+
 .new-user__control input {
   font: inherit;
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #ccc;
 }
+
+.new-user__control.invalid input {
+	  background-color: salmon;
+}
+
 
 .new-user__actions {
   text-align: center;
@@ -33,7 +42,6 @@
   background-color: #40005d;
   color: white;
 }
-
 
 .new-user button:hover,
 .new-user button:active {
