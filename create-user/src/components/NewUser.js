@@ -1,12 +1,12 @@
-import NewUserForm from './NewUserForm';
-import style from './NewUser.module.css';
+import NewUserForm from "./NewUserForm";
+import Card from "./Card";
 
-function NewUser(){
-	return (
-		<div className={style['new-user']}>
-			<NewUserForm />
-		</div>
-	)
+function NewUser() {
+  return (
+    <Card>
+      <NewUserForm />
+    </Card>
+  );
 }
 
 export default NewUser;

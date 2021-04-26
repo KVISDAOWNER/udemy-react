@@ -1,12 +1,11 @@
-import Card from "./components/Card";
 import NewUser from "./components/NewUser";
+import Users from "./components/Users";
 
 function App() {
   return (
     <div>
-      <Card>
-				<NewUser/>
-			</Card>
+      <NewUser />
+      <Users />
     </div>
   );
 }
