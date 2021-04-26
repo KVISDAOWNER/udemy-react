@@ -1,6 +1,11 @@
+import NewUserForm from './NewUserForm';
+import style from './NewUser.module.css';
+
 function NewUser(){
 	return (
-		<h1>New User</h1>
+		<div className={style['new-user']}>
+			<NewUserForm />
+		</div>
 	)
 }
 
