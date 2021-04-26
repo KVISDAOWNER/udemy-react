@@ -1,10 +1,14 @@
 import NewUserForm from "./NewUserForm";
 import Card from "./Card";
 
-function NewUser() {
+function NewUser(props) {
+
+	function newUserHandler(user){
+		props.onNewUser(user);
+	}
   return (
     <Card>
-      <NewUserForm />
+      <NewUserForm onFormSubmit={newUserHandler} />
     </Card>
   );
 }

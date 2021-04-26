@@ -24,7 +24,6 @@ function NewUserForm(props) {
     if (age === "") setIsAgeValid(false);
 
     const userData = {
-      id: username,
       username: username,
       age: age,
     };
@@ -32,7 +31,7 @@ function NewUserForm(props) {
     setUsername("");
     setAge("");
 
-    console.log(userData);
+    props.onFormSubmit(userData);
   }
 
   return (
