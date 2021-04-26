@@ -1,9 +1,11 @@
-import Card from './components/Card';
+import Card from "./components/Card";
+import NewUser from "./components/NewUser";
 
 function App() {
   return (
     <div>
-			<Card>
+      <Card>
+				<NewUser/>
 			</Card>
     </div>
   );
