@@ -20,14 +20,19 @@ function NewUserForm(props) {
   function submitHandler(event) {
     event.preventDefault(); //dont reload page on form submit - this is otherwise default html behavior
 
-    if (username === "") setIsUsernameValid(false);
-    if (age === "") setIsAgeValid(false);
+    if (username.trim().length === 0 || age.trim().length === 0 || isNaN(age.trim()) || +age < 1){
+			if(username.trim().length === 0)
+				setIsUsernameValid(false);
+			if(age.trim().length === 0 || isNaN(age.trim()) || +age < 1)
+				setIsAgeValid(false);
+			return;
+		}
 
     const userData = {
       username: username,
       age: age,
     };
-
+		console.log(userData);
     setUsername("");
     setAge("");
 

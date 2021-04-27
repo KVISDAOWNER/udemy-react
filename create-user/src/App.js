@@ -11,7 +11,6 @@ function App() {
   const [users, setUsers] = useState(defaultUsers);
 
   function addUserHandler(user) {
-		console.log(user);
     setUsers((oldUsers) => {
       return [user, ...oldUsers];
     });
