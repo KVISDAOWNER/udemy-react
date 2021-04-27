@@ -1,5 +1,6 @@
 import { useState } from "react";
 import style from "./NewUserForm.module.css";
+import Button from "./Button";
 
 function NewUserForm(props) {
   const [username, setUsername] = useState("");
@@ -65,7 +66,7 @@ function NewUserForm(props) {
           </div>
         </div>
         <div>
-          <button type="submit">Add User</button>
+          <Button type="submit">Add User</Button>
         </div>
       </form>
     </div>
