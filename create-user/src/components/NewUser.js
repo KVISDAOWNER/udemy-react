@@ -2,6 +2,7 @@ import NewUserForm from "./NewUserForm";
 import Card from "./Card";
 import ErrorModal from "./ErrorModal";
 import { useState } from "react";
+import Wrapper from "./Wrapper";
 
 function NewUser(props) {
   const [error, setError] = useState("");
@@ -34,7 +35,7 @@ function NewUser(props) {
   }
 
   return (
-    <div>
+    <Wrapper>
       {error && (
         <ErrorModal
           title={error.title}
@@ -45,7 +46,7 @@ function NewUser(props) {
       <Card>
         <NewUserForm onFormSubmit={newUserHandler} />
       </Card>
-    </div>
+    </Wrapper>
   );
 }
 
