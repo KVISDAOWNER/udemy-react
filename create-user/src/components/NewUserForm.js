@@ -5,35 +5,23 @@ import Button from "./Button";
 function NewUserForm(props) {
   const [username, setUsername] = useState("");
   const [age, setAge] = useState("");
-  const [isUsernameValid, setIsUsernameValid] = useState(true);
-  const [isAgeValid, setIsAgeValid] = useState(true);
 
   function usernameChangedHandler(event) {
     setUsername(event.target.value);
-    setIsUsernameValid(true);
   }
 
   function ageChangedHandler(event) {
     setAge(event.target.value);
-    setIsAgeValid(true);
   }
 
   function submitHandler(event) {
     event.preventDefault(); //dont reload page on form submit - this is otherwise default html behavior
 
-    if (username.trim().length === 0 || age.trim().length === 0 || isNaN(age.trim()) || +age < 1){
-			if(username.trim().length === 0)
-				setIsUsernameValid(false);
-			if(age.trim().length === 0 || isNaN(age.trim()) || +age < 1)
-				setIsAgeValid(false);
-			return;
-		}
-
     const userData = {
       username: username,
       age: age,
     };
-		console.log(userData);
+
     setUsername("");
     setAge("");
 
@@ -44,11 +32,7 @@ function NewUserForm(props) {
     <div className={style["new-user"]}>
       <form onSubmit={submitHandler}>
         <div className={style["new-user__controls"]}>
-          <div
-            className={`${style["new-user__control"]} ${
-              !isUsernameValid && style.invalid
-            }`}
-          >
+          <div className={style["new-user__control"]}>
             <label>Username</label>
             <input
               type="text"
@@ -56,11 +40,7 @@ function NewUserForm(props) {
               value={username}
             ></input>
           </div>
-          <div
-            className={`${style["new-user__control"]} ${
-              !isAgeValid && style.invalid
-            }`}
-          >
+          <div className={style["new-user__control"]}>
             <label>Age (Years)</label>
             <input type="text" onChange={ageChangedHandler} value={age}></input>
           </div>
