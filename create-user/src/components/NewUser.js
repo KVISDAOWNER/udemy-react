@@ -1,5 +1,7 @@
 import NewUserForm from "./NewUserForm";
 import Card from "./Card";
+import ErrorModal from "./ErrorModal";
+
 
 function NewUser(props) {
 
@@ -7,9 +9,12 @@ function NewUser(props) {
 		props.onNewUser(user);
 	}
   return (
-    <Card>
-      <NewUserForm onFormSubmit={newUserHandler} />
-    </Card>
+		<div>
+			<ErrorModal title='Error' message='Invalid input'></ErrorModal>	
+			<Card>
+				<NewUserForm onFormSubmit={newUserHandler} />
+			</Card>
+		</div>
   );
 }
 
