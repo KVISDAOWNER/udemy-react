@@ -1,5 +1,6 @@
 import Card from "./Card";
 import style from "./ErrorModal.module.css";
+import Button from "./Button";
 
 function ErrorModal(props){
 	return(
@@ -13,7 +14,7 @@ function ErrorModal(props){
 					<p>{props.message}</p>
 				</div>
 				<footer className={style.actions}>
-					<button>Okay</button>
+					<Button onClick={props.onClick}>Okay</Button>
 				</footer>
 			</Card>
 		</div>);
