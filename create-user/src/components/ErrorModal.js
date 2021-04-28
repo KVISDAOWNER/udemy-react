@@ -28,7 +28,7 @@ function ErrorModal(props) {
   return (
     <>
       {ReactDOM.createPortal(
-        <Backdrop />,
+        <Backdrop onClick={props.onClick}/>,
         document.getElementById("backdrop-root")
       )}
       {ReactDOM.createPortal(
