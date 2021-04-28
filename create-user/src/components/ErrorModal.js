@@ -27,11 +27,11 @@ function ModalOverlay(props) {
 function ErrorModal(props) {
   return (
     <>
-      {ReactDOM.createPortal(
+      {ReactDOM.createPortal(	//Portal to div in index.html
         <Backdrop onClick={props.onClick}/>,
         document.getElementById("backdrop-root")
       )}
-      {ReactDOM.createPortal(
+      {ReactDOM.createPortal(	//Portal to div in index.html
         <ModalOverlay
           title={props.title}
           message={props.message}
