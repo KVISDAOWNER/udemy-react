@@ -29,9 +29,6 @@ function NewUser(props) {
     props.onNewUser(user);
   }
 
-  function closeError() {
-    setError(null);
-  }
 
   return (
     <>
