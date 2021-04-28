@@ -1,32 +1,27 @@
-import { useState } from "react";
+import { useRef } from "react";
 import style from "./NewUserForm.module.css";
 import Button from "./Button";
 
 function NewUserForm(props) {
-  const [username, setUsername] = useState("");
-  const [age, setAge] = useState("");
-
-  function usernameChangedHandler(event) {
-    setUsername(event.target.value);
-  }
-
-  function ageChangedHandler(event) {
-    setAge(event.target.value);
-  }
+  const usernameRef = useRef();
+  const ageRef = useRef();
 
   function submitHandler(event) {
     event.preventDefault(); //dont reload page on form submit - this is otherwise default html behavior
 
+		const enteredName = usernameRef.current.value;
+		const enteredAge = ageRef.current.value;
+
     const userData = {
-      username: username,
-      age: age,
+      username: enteredName,
+      age: enteredAge,
     };
 
-    setUsername("");
-    setAge("");
 
     props.onFormSubmit(userData);
-  }
+		usernameRef.current.value = ''; //here we directly modify DOM element. Is ok practice with this minor "modification"
+		ageRef.current.value = '';
+	}
 
   return (
     <div className={style["new-user"]}>
@@ -34,15 +29,11 @@ function NewUserForm(props) {
         <div className={style["new-user__controls"]}>
           <div className={style["new-user__control"]}>
             <label>Username</label>
-            <input
-              type="text"
-              onChange={usernameChangedHandler}
-              value={username}
-            ></input>
+            <input type="text" ref={usernameRef}></input>
           </div>
           <div className={style["new-user__control"]}>
             <label>Age (Years)</label>
-            <input type="text" onChange={ageChangedHandler} value={age}></input>
+            <input type="text" ref={ageRef}></input>
           </div>
         </div>
         <div>
